@@ -104,3 +104,20 @@ def fetch_weather_data(date_str: str, output_dir: str):
     except requests.exceptions.RequestException as e:
         logging.error(f"Pipeline failed during extraction: {e}")
         raise # Rethrow to alert the orchestrator
+
+---
+
+## Project Status: Phase 1 Complete ✅
+Phase 1 of the local Medallion Architecture has been fully implemented, including:
+- Idempotent API Ingestion (Bronze)
+- Parquet Flattening (Silver)
+- DuckDB Analytical Warehouse (Gold)
+- Bash Orchestration
+- Pytest Data Quality Gates
+- Streamlit Serving Layer
+
+## Phase 2 Roadmap: Production & Cloud 🚀
+- **Advanced Orchestration:** Migrate Bash to Apache Airflow DAGs.
+- **Cloud Storage:** Transition local folders to AWS S3 or GCS.
+- **Containerization:** Dockerize the entire pipeline for environment consistency.
+- **CI/CD:** Automate tests and deployment via GitHub Actions.
